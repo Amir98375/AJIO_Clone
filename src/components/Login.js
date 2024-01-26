@@ -23,10 +23,14 @@ const Login = (props) => {
         <View
           style={{
             backgroundColor: "white",
-            height: 700,
-            width: 400,
+            height: 600,
+            width: 450,
             borderTopLeftRadius: 130,
+            // borderTopRightRadius:130,
+            // borderBottomLeftRadius:130,
+            borderBottomRightRadius:130,
             paddingTop: 100,
+            paddingRight:40,
             alignItems: "center",
           }}
         >
