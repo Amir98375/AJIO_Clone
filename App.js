@@ -1,13 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView  } from 'react-native';
 import LandingPage from './src/components/LandingPage';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-     <LandingPage/>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+    <SafeAreaView >
+ 
+    <LandingPage/>
+
+    </SafeAreaView>
+    //  {/* <LandingPage/> */}
+    //   {/* <StatusBar style="auto" /> */}
+    // {/* </View> */}
   );
 }
 
