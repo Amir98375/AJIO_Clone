@@ -10,7 +10,7 @@ export default function Btn({ bgColor, btnLabel, textColor,Press }) {
         borderRadius: 100,
         alignItems: "center",
         width:350,
-        marginTop:70,
+        marginTop:40,
         paddingVertical:5,
         // marginVertical:10,
         marginLeft:5
