@@ -1,31 +1,41 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView  } from 'react-native';
-<<<<<<< HEAD
 // import { NavigationContainer } from '@react-navigation/native';
-=======
-import LandingPage from './src/components/LandingPage';
-
-import * as React from 'react';
-// import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
->>>>>>> b0d1a92ead7efe61d64f25ba244157c280c2d4eb
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import LandingPage from './src/components/LandingPage';
+import LandingPage from './src/components/LandingPage';
 import Home from './src/components/Home';
 import Signup from './src/components/Signup';
 import Login from './src/components/Login';
 import MainPage from './src/components/MainPage';
+import MenProducts from './src/components/MenProducts';
+import WomenProducts from './src/components/WomenProducts';
 
 
 const Stack = createNativeStackNavigator();
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [products, setProducts] = useState([]);
+
+  const renderProducts = () => {
+    if (selectedCategory === 'men') {
+      return <MenProducts products={products} />;
+    } else if (selectedCategory === 'women') {
+      return <WomenProducts products={products} />;
+    }
+    return null;
+  };
   return (
     // <View style={styles.container}>
     <SafeAreaView >
  
-    <LandingPage/>
+    <LandingPage 
+      setSelectedCategory={setSelectedCategory}
+      setProducts={setProducts} 
+    />
+      {renderProducts()}
      <MainPage/>
     </SafeAreaView>
     //  {/* <LandingPage/> */}
