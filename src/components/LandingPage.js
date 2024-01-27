@@ -1,17 +1,38 @@
 import { ScrollView, Text, View, StyleSheet,TouchableOpacity, StatusBar } from "react-native";
 import React, { Component, useState  } from "react";
+import MenProducts from "./MenProducts";
+import WomenProducts from "./WomenProducts";
 
 
 
-const LandingPage = () => {
+const LandingPage = ({ setSelectedCategory, setProducts }) => {
   const [loginAuth,setLoginAuth]=useState(true)
+
+  const fetchProducts = (category) => {
+    if (category === 'men') {
+      setProducts([
+        { id: 1, name: 'Mens Product 1' },
+        { id: 2, name: 'Mens Product 2' },
+      ]);
+    } else if (category === 'women') {
+      setProducts([
+        { id: 1, name: 'Womens Product 1' },
+        { id: 2, name: 'Womens Product 2' },
+      ]);
+    }
+    setSelectedCategory(category);
+  };
   return (
 
       <View style={styles.container}>
         <StatusBar backgroundColor="#007bff" barStyle="light-content" />
         <TouchableOpacity
+         onPress={() => { 
+          // setSelectedCategory('men');
+          fetchProducts('men');
+        }}
           style={styles.menuItem}
-          // onPress={() => navigation.navigate("Screen1")}
+         
         >
           <Text style={styles.menuText}>
 
@@ -19,7 +40,10 @@ const LandingPage = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
-          // onPress={() => navigation.navigate("Screen2")}
+          onPress={() => { 
+            // setSelectedCategory('women');
+            fetchProducts('women');
+          }}
         >
           <Text style={styles.menuText}>Womens
           </Text>
@@ -30,6 +54,8 @@ const LandingPage = () => {
         >
           <Text style={styles.menuText}>{loginAuth?'Login':'Logout'}</Text>
         </TouchableOpacity>
+        {/* {selectedCategory === 'men' && <MenProducts products={products} />}
+      {selectedCategory === 'women' && <WomenProducts products={products} />} */}
       </View>
   
   );
