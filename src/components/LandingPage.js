@@ -2,6 +2,7 @@ import { ScrollView, Text, View, StyleSheet,TouchableOpacity, StatusBar } from "
 import React, { Component, useState  } from "react";
 
 
+
 const LandingPage = () => {
   const [loginAuth,setLoginAuth]=useState(true)
   return (
@@ -20,7 +21,8 @@ const LandingPage = () => {
           style={styles.menuItem}
           // onPress={() => navigation.navigate("Screen2")}
         >
-          <Text style={styles.menuText}>Womens</Text>
+          <Text style={styles.menuText}>Womens
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
@@ -48,6 +50,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    // height:40,
+//  verticalAlign:'middle',
+    borderRadius:3,
+    // backgroundColor:'black'
   },
   menuText: {
     fontSize: 16,
