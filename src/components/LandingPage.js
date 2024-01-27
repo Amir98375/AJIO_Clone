@@ -39,12 +39,17 @@ const LandingPage = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-  
+    elevation: 5,
+  shadowColor: 'black',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 0.75,
+  shadowRadius: 3.84,
     justifyContent: 'space-around',
     // alignItems: 'center',
     backgroundColor: 'skyblue', // You can adjust the background color here
     height: 60, // Adjust the height of the menu bar
     elevation: 3, // Adds shadow to the menu bar
+
   },
   menuItem: {
     flex: 1,
