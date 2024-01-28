@@ -23,14 +23,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [products, setProducts] = useState([]);
 
-  const renderProducts = () => {
-    if (selectedCategory === 'men') {
-      return <MenProducts products={products} />;
-    } else if (selectedCategory === 'women') {
-      return <WomenProducts products={products} />;
-    }
-    return null;
-  };
+
   return (
     // <View style={styles.container}>
     <SafeAreaView >

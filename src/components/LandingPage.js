@@ -1,27 +1,12 @@
 import { ScrollView, Text, View, StyleSheet,TouchableOpacity, StatusBar } from "react-native";
 import React, { Component, useState  } from "react";
-import MenProducts from "./MenProducts";
-import WomenProducts from "./WomenProducts";
 
 
 
 const LandingPage = ({ setSelectedCategory, setProducts }) => {
   const [loginAuth,setLoginAuth]=useState(true)
 
-  const fetchProducts = (category) => {
-    if (category === 'men') {
-      setProducts([
-        { id: 1, name: 'Mens Product 1' },
-        { id: 2, name: 'Mens Product 2' },
-      ]);
-    } else if (category === 'women') {
-      setProducts([
-        { id: 1, name: 'Womens Product 1' },
-        { id: 2, name: 'Womens Product 2' },
-      ]);
-    }
-    setSelectedCategory(category);
-  };
+ 
   return (
 
       <View style={styles.container}>
@@ -29,7 +14,7 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
         <TouchableOpacity
          onPress={() => { 
           // setSelectedCategory('men');
-          fetchProducts('men');
+         
         }}
           style={styles.menuItem}
          
@@ -42,7 +27,7 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
           style={styles.menuItem}
           onPress={() => { 
             // setSelectedCategory('women');
-            fetchProducts('women');
+           
           }}
         >
           <Text style={styles.menuText}>Womens
