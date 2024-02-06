@@ -25,7 +25,7 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
          
         >
           <Text style={styles.menuText}  
-             onPress={() => navigation.navigate("MainPage")}>
+             onPress={() => navigation.navigate("Home")}>
 
             Home</Text>
         </TouchableOpacity>
@@ -67,10 +67,12 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
 
 const styles = StyleSheet.create({
   container: {
+    position:'fixed',
     flexDirection: 'row',
     elevation: 5,
   shadowColor: 'black',
   shadowOffset: { width: 0, height: 2 },
+
   shadowOpacity: 0.75,
   shadowRadius: 3.84,
     justifyContent: 'space-around',

@@ -41,8 +41,9 @@ const MainPage = () => {
 
   return (
     <View >
+       
       <ScrollView >
-      <LandingPage />
+   
         <SliderBox 
       
           images={images}

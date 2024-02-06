@@ -8,23 +8,26 @@ const MenProducts = () => {
   return (
 <ScrollView>
 
-{arr.map((el)=>{
+{arr.map((el,index)=>{
   return(
     <View style={styles.container}>
       <View style={styles.containerChild}>
-      <Image source={{uri:'https://picsum.photos/500'}}
+      <Image key={index} source={{uri:'https://picsum.photos/500'}}
         style={styles.imageCon}/>
+        <Text style={styles.title}>Title Title  2</Text>
       </View>
       <View style={styles.containerChild}>
-        <Image source={{uri:'https://picsum.photos/300'}}
+        <Image key={index} source={{uri:'https://picsum.photos/300'}}
         style={styles.imageCon}/>
-        
+        <Text style={styles.title}>Title Title  2</Text>
       </View>
       <View style={styles.containerChild}>
-      <Image source={{uri:'https://picsum.photos/400'}}
+      <Image key={index} source={{uri:'https://picsum.photos/400'}}
         style={styles.imageCon}/>
+      <Text style={styles.title}>Title Title  2</Text>
         
       </View>
+      
     </View>
   )
 })}
@@ -35,35 +38,33 @@ const MenProducts = () => {
 export default MenProducts;
 
 const styles = StyleSheet.create({
-  imageCon:{
-   height:'100%',
-   width:'100%',
-   borderRadius:'50%'
+  imageCon: {
+    height: '75%',
+    width: "90%",
+    borderRadius: 10 // half of 150
+  },
+  title:{
+    textAlign: 'center',
+    marginTop: 5,
+    // color: 'white'
   },
   container: {
-     display:'flex',
+    backgroundColor:'whitesmoke',
+    display: 'flex',
     justifyContent: "space-around",
-    flexDirection:'row',
-    backgroundColor:'white',
-   paddingVertical:10,
-
-    height: '100px',
-// alignContent:'center',
+    flexDirection: 'row',
+    // backgroundColor: 'grey',
+    paddingVertical: 10,
+    height: 150,
     width: '100%',
- 
-    
   },
   containerChild: {
-    height:100,
+    height: '100%',
     width: "30%",
-    // backgroundColor:'whitesmoke',
-  //    alignItems:'center',
-
-  //  alignSelf:'center',
-  elevation: 2, // Add elevation for box shadow
-  // backgroundColor: "green",
-   borderRadius:50,
-    // borderWidth:2,
-    // borderColor: "1px solid black",
+    borderRadius:15,
+    elevation:2,
+    backgroundColor:'lightgrey',
+    alignItems: 'center', // Align content horizontally center
+    justifyContent: 'center' // Align content vertically center
   },
 });

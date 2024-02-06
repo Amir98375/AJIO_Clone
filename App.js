@@ -55,10 +55,12 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
+        
       <SafeAreaView style={styles.container}>
+      <LandingPage />
         {/* <ScrollView> */}
     
-          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: true }}>
+          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={MainPage} />
             <Stack.Screen name="mens" component={MenProducts} />
             <Stack.Screen name="womens" component={WomensPage} />
