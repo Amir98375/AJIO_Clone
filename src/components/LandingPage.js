@@ -10,20 +10,7 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
   const navigation = useNavigation();
   const [loginAuth,setLoginAuth]=useState(true)
 
-  const fetchProducts = (category) => {
-    if (category === 'men') {
-      setProducts([
-        { id: 1, name: 'Mens Product 1' },
-        { id: 2, name: 'Mens Product 2' },
-      ]);
-    } else if (category === 'women') {
-      setProducts([
-        { id: 1, name: 'Womens Product 1' },
-        { id: 2, name: 'Womens Product 2' },
-      ]);
-    }
-    setSelectedCategory(category);
-  };
+ 
   return (
 
       <View style={styles.container}>
