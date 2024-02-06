@@ -2,10 +2,12 @@ import { ScrollView, Text, View, StyleSheet,TouchableOpacity, StatusBar } from "
 import React, { Component, useState  } from "react";
 import MenProducts from "./MenProducts";
 import WomenProducts from "./WomenProducts";
+import { useNavigation } from '@react-navigation/native';
 
 
 
 const LandingPage = ({ setSelectedCategory, setProducts }) => {
+  const navigation = useNavigation();
   const [loginAuth,setLoginAuth]=useState(true)
 
   const fetchProducts = (category) => {
@@ -27,25 +29,39 @@ const LandingPage = ({ setSelectedCategory, setProducts }) => {
       <View style={styles.container}>
         <StatusBar backgroundColor="#007bff" barStyle="light-content" />
         <TouchableOpacity
-         onPress={() => { 
-          // setSelectedCategory('men');
-          fetchProducts('men');
-        }}
+        //  onPress={() => navigation.navigate("mens")}
+        //  onPress={() => { 
+        //   // setSelectedCategory('men');
+        //   fetchProducts('men');
+        // }}
           style={styles.menuItem}
          
         >
-          <Text style={styles.menuText}>
+          <Text style={styles.menuText}  
+             onPress={() => navigation.navigate("MainPage")}>
 
-            Mens</Text>
+            Home</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => { 
-            // setSelectedCategory('women');
-            fetchProducts('women');
-          }}
+          // onPress={() => { 
+          //   // setSelectedCategory('women');
+          //   fetchProducts('women');
+          // }}
         >
-          <Text style={styles.menuText}>Womens
+          <Text style={styles.menuText}
+          onPress={() => navigation.navigate("mens")}>Mens
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.menuItem}
+          // onPress={() => { 
+          //   // setSelectedCategory('women');
+          //   fetchProducts('women');
+          // }}
+        >
+          <Text style={styles.menuText}
+          onPress={() => navigation.navigate("womens")}>Womens
           </Text>
         </TouchableOpacity>
         <TouchableOpacity

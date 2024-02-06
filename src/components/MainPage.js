@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import { FlatList, SafeAreaView, StyleSheet, View } from 'react-native';
+import { FlatList, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { SliderBox } from 'react-native-image-slider-box';
 import ImageCard from './ImageCard';
+import LandingPage from './LandingPage';
 
 const MainPage = () => {
   const [array,setArray]=useState([    {
@@ -27,10 +28,6 @@ const MainPage = () => {
     imageUrl:'https://picsum.photos/300',
     Amount:'$700',
     title:'USPA jeans',
-  },  {
-    imageUrl:'https://picsum.photos/900',
-    Amount:'$1300',
-    title:'USPA jeans',
   }
 
 ])
@@ -43,8 +40,9 @@ const MainPage = () => {
 
 
   return (
-    <SafeAreaView >
-      <View  >
+    <View >
+      <ScrollView >
+      <LandingPage />
         <SliderBox 
       
           images={images}
@@ -64,7 +62,7 @@ const MainPage = () => {
             backgroundColor: "grey"
           }}
           />
-      </View>
+
 
 
     <FlatList
@@ -78,8 +76,9 @@ const MainPage = () => {
       </View>
     )}
     keyExtractor={(item, index) => index.toString()}
-  />     
-    </SafeAreaView>
+  />   
+        </ScrollView>  
+    </View>
   );
 };
 
