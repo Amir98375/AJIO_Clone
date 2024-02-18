@@ -49,6 +49,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MenProducts from './src/components/MenProducts';
 import WomensPage from './src/Pages/WomensPage';
+import WomenProducts from './src/components/WomenProducts'
+import ProductsScreen from './src/components/ProductsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,7 +65,9 @@ function App() {
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={MainPage} />
             <Stack.Screen name="mens" component={MenProducts} />
-            <Stack.Screen name="womens" component={WomensPage} />
+            <Stack.Screen name="womens" component={WomenProducts} />
+            <Stack.Screen name="products" component={ProductsScreen} />
+
         
             {/* Add other screens here */}
           </Stack.Navigator>
